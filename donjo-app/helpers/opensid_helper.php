@@ -702,4 +702,20 @@ function ambilBerkas($nama_berkas, $redirect_url, $unique_id = null, $lokasi = L
 	}
 	force_download($nama_berkas, $data);
 }
+
+function autocomplete_str($kolom, $tabel)
+{
+	$CI =& get_instance();
+	$CI->load->database();
+	$data = $CI->db->select($kolom)->
+		get($tabel)->result_array();
+	$str = '';
+	foreach ($data as $baris)
+	{
+		$str .= ',"' .$baris[$kolom]. '"';
+	}
+	$str = '[' . strtolower(substr($str, 1)) . ']';
+	return $str;
+}
+
 ?>
