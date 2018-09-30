@@ -192,13 +192,6 @@ class Surat extends CI_Controller {
 		$data_form = $this->surat_model->get_data_form($url);
 		if (is_file($data_form))
 			include($data_form);
-
-		switch ($url)
-		{
-			case 'surat_pernyataan_akta':
-				$data['laki'] = $this->surat_model->list_penduduk_laki();
-				break;
-		}
 	}
 
 	public function favorit($id = 0, $k = 0)
