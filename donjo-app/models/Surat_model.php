@@ -582,41 +582,6 @@
 
 		switch ($url)
 		{
-			case 'surat_persetujuan_mempelai':
-				# Data suami
-				if ($input['id_suami'])
-				{
-					$suami = $this->get_data_surat($input['id_suami']);
-					$array_replace = array(
-                        "[form_nama_suami]"           => $suami['nama'],
-                        "[form_bin_suami]"            => $suami['nama_ayah'],
-                        "[form_tempatlahir_suami]"    => $suami['tempatlahir'],
-                        "[form_tanggallahir_suami]"   => tgl_indo_dari_str($suami['tanggallahir']),
-                        "[form_wn_suami]"             => $suami['warganegara'],
-                        "[form_agama_suami]"          => $suami['agama'],
-                        "[form_pekerjaan_suami]"      => $suami['pekerjaan'],
-                        "[form_tempat_tinggal_suami]" => "RT $suami[rt] / RW $suami[rw] $suami[dusun] $alamat_desa",
-					);
-					$buffer = str_replace(array_keys($array_replace), array_values($array_replace), $buffer);
-
-				}
-				if ($input['id_istri'])
-				{
-					$istri = $this->get_data_surat($input['id_istri']);
-					$array_replace = array(
-                        "[form_nama_istri]"           => $istri['nama'],
-                        "[form_bin_istri]"            => $istri['nama_ayah'],
-                        "[form_tempatlahir_istri]"    => $istri['tempatlahir'],
-                        "[form_tanggallahir_istri]"   => tgl_indo_dari_str($istri['tanggallahir']),
-                        "[form_wn_istri]"             => $istri['warganegara'],
-                        "[form_agama_istri]"          => $istri['agama'],
-                        "[form_pekerjaan_istri]"      => $istri['pekerjaan'],
-                        "[form_tempat_tinggal_istri]" => "RT $istri[rt] / RW $istri[rw] $istri[dusun] $alamat_desa",
-					);
-					$buffer = str_replace(array_keys($array_replace), array_values($array_replace), $buffer);
-				}
-				break;
-
 			case 'surat_permohonan_cerai':
 				# Data istri
 				$istri = $this->get_data_istri($individu['id']);
