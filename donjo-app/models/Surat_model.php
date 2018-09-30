@@ -582,10 +582,6 @@
 
 		switch ($url)
 		{
-			case 'surat_ket_beda_identitas_kis':
-				$lokasi_komponen = $this->lokasi_komponen($url, 'get_data_export.php');
-		    include(FCPATH.$lokasi_komponen);
-				break;
 			case 'surat_ket_kurang_mampu':
 				$anggota = $this->keluarga_model->list_anggota($individu['id_kk'], array('dengan_kk'=>false));
 				for ($i = 0; $i < MAX_ANGGOTA; $i++)
