@@ -508,12 +508,6 @@
 		$kode = array();
 		switch ($surat)
 		{
-			case 'surat_permohonan_kartu_keluarga':
-				$kode['alasan_permohonan'] = array(
-				  1 => "Karena Membentuk Rumah Tangga Baru",
-				  2 => "Karena Kartu Keluarga Hilang/Rusak",
-				  3 => "Lainnya"
-				);
 			case 'surat_ket_pindah_penduduk':
 				$kode["alasan_pindah"] = array(
 					1 => "Pekerjaan",
